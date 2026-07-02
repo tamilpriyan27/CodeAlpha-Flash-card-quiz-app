@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flash cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="outerdiv">
+        <div id="innerdiv_1">
+            <h1>Flash cards quiz app</h1>
+            <div id="totalquestions"></div>
+            <div id="flashcard">
+            <div id="flashcard-inner">
+                <div class="front">
+                    <h2 id="question"></h2>
+                    <button onclick="flipCard()">
+                    Show Answer
+                    </button>
+                </div>
+                <div class="back">
+                    <h2 id="answer"></h2>
+                    <button onclick="flipCard()">
+                    Show Question
+                    </button>
+                </div>
+            </div>
+            </div>
+            <div id="navigationbutton"><button class="navibutton" id="prevbtn" onclick="previous()">&#60; Previous</button> <button class="navibutton" id="nextbtn" onclick="next()">Next &#62;</button></div>
+        </div>
+        <div id="innerdiv_2">
+            <h1>Add, Delete and Edit Flashcards</h1>
+            <div id="changesdiv"><button class="changesbutton" onclick="showaddform()" id="add">&#43; Add card</button>
+                <button class="changesbutton" onclick="showcards()" id="delete">&#128465; Delete card</button>
+                <button class="changesbutton" onclick="showEditCards()" id="edit">&#9998; Edit card</button></div>
+            <div id="changesbox"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

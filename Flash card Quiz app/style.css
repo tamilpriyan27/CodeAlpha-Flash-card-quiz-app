@@ -1,0 +1,338 @@
+body{
+    background-color: rgba(223, 234, 167, 0.751);
+}
+#outerdiv,#innerdiv_1,#innerdiv_2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#innerdiv_1 h1{
+    font-size: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#totalquestions{
+    padding: 5px 19px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    margin-top: 50px;
+    background-color: rgba(253, 255, 167, 0.785);
+    border: 2px solid rgb(199, 227, 58);
+}
+#flashcard{
+    width:500px;
+    height:300px;
+    margin:auto;
+    margin-top: 20px;
+    perspective:1000px;
+    
+}
+#flashcard-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transition:transform 0.8s;
+    transform-style:preserve-3d;
+}
+#flashcard-inner.flip{
+    transform:rotateX(180deg);
+}
+
+.front,
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgb(244, 246, 225);
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:20px;
+    box-sizing:border-box;
+    backface-visibility:hidden;
+    border: 2px solid rgb(204, 225, 101);
+}
+.back{
+    transform: rotateX(180deg);
+}
+#question,
+#answer{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    text-align:center;
+}
+#answer{
+    color: rgb(90, 146, 5);
+}
+.front button,
+.back button{
+    width:180px;
+    padding:12px;
+    margin-top:auto;
+    border:2px solid yellow;
+    border-radius:8px;
+    background:rgba(0, 0, 0, 0.795);
+    color:yellow;
+    cursor:pointer;
+}
+.front button:hover{
+    border-radius: 20px;
+}
+
+#navigationbutton{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 250px;
+}
+.navibutton{
+    font-size: 0.9em;
+    padding: 5px 13px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(244, 246, 225);
+    color: black;
+    font-weight: bold;
+    border: 2px solid rgb(204, 225, 101);
+}
+.navibutton:active{
+    background-color: rgba(250, 252, 145, 0.785);
+    border: 2px solid rgb(199, 227, 58);
+}
+#nextbtn{
+    padding: 5px 20px;
+}
+#innerdiv_2{
+    margin-top: 30px;
+    padding: 10px;
+}
+#innerdiv_2 h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+}
+#changesdiv{
+    padding: 10px;
+    border-radius: 30px;
+    width: 450px;
+    border: 2px solid rgb(204, 225, 101);
+    background-color: rgb(244, 246, 225);
+}
+#add{
+    padding: 9px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-left: 30px;
+    border:1px solid rgb(20, 139, 18);
+    border-radius:8px;
+    background:rgba(207, 232, 195, 0.785);
+    color:green;
+    font-weight: bold;
+}
+#delete{
+    padding: 9px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-left: 40px;
+    border:1px solid rgb(232, 62, 62);
+    border-radius:8px;
+    background:rgba(243, 188, 188, 0.464);
+    color:rgb(241, 42, 42);
+    font-weight: bold;
+}
+#edit{
+    padding: 9px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-left: 40px;
+    border:1px solid rgb(146, 146, 12);
+    border-radius:8px;
+    background:rgba(241, 241, 108, 0.704);
+    color:rgb(112, 112, 12);
+    font-weight: bold;
+}
+#add:hover{
+    border-radius: 20px;
+}
+#delete:hover{
+    border-radius: 20px;
+}
+#edit:hover{
+    border-radius: 20px;
+}
+#addForm{
+
+    margin-top:20px;
+    padding:20px;
+    text-align: center;
+    border:1px solid rgb(181, 207, 50);
+    background-color: rgba(244, 245, 223, 0.571);
+    border-radius:10px;
+}
+#addForm input{
+
+    width:250px;
+    border: 2px solid rgb(204, 225, 101);
+    padding:10px;
+    background:rgb(244, 246, 225);
+    border-radius:5px;
+}
+.deleteCard,.editCard{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-top: 30px;
+    align-items:center;
+    width: 300px;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid rgb(181, 207, 50);
+    background-color: rgba(244, 245, 223, 0.571);
+    border-radius:10px;
+}
+.editCard input{
+    width:250px;
+    border: 2px solid rgb(204, 225, 101);
+    padding:10px;
+    background:rgb(244, 246, 225);
+    border-radius:5px;
+    font-size: 1em;
+}
+#savebtn,#saveall{
+    border:2px solid yellow;
+    border-radius:8px;
+    background:rgba(0, 0, 0, 0.795);
+    color:yellow;
+    cursor:pointer;
+    padding:10px 15px;
+}
+#saveall{
+    margin-left: 40%;
+}
+#delques{
+    font-size: 1.4em;
+}
+#deleteque{
+    margin-top: 20px;
+    font-size: 0.9em;
+    border:2px solid yellow;
+    border-radius:8px;
+    background:rgba(0, 0, 0, 0.795);
+    color:yellow;
+    cursor:pointer;
+    padding:10px 20px;
+}
+@media screen and (max-width:768px){
+
+    body{
+        padding:10px;
+        overflow-x:hidden;
+    }
+
+    #flashcard{
+        width:99%;
+        max-width:700px;
+        height:250px;
+    }
+
+    #question,
+    #answer{
+        font-size:22px;
+        padding:10px;
+    }
+    #answer{
+        color: rgb(90, 146, 5);
+    }
+
+    .front button,
+    .back button{
+        width:120px;
+        font-size:13px;
+    }
+
+    #navigationbutton{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width:100%;
+        gap: 25px;
+        justify-content:space-between;
+        margin-top: 20px;
+        flex-wrap:nowrap;
+    }
+
+    .navibutton{
+        font-size:0.8em;
+        padding:8px 20px;
+    }
+    #prevbtn{
+        padding: 5px 14px;
+    }
+
+    #changesdiv{
+        width:95%;
+        max-width:350px;
+        text-align:center;
+    }
+
+    #add,
+    #delete,
+    #edit{
+        margin:10px 5px;
+        width:90%;
+    }
+
+    #addForm{
+        width:99%;
+        max-width: 400px;
+        padding: 20px;
+        box-sizing:border-box;
+    }
+
+    #addForm input{
+        width:100%;
+        padding: 12px;
+        box-sizing:border-box;
+    }
+
+    .deleteCard,
+    .editCard{
+        width:95%;
+        max-width:320px;
+    }
+
+    .editCard input{
+        width:90%;
+        box-sizing:border-box;
+    }
+
+    #saveall{
+        margin-left:0;
+        width:100%;
+        margin-top:15px;
+    }
+
+    #innerdiv_1 h1,
+    #innerdiv_2 h1{
+        text-align:center;
+        font-size:1.3em;
+    }
+
+    #totalquestions{
+        margin-top:20px;
+    }
+
+    #delques{
+        font-size:1.1em;
+        text-align:center;
+    }
+
+    #deleteque{
+        width:90%;
+    }
+}
